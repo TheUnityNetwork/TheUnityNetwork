@@ -1,0 +1,65 @@
+# Adding the voting mechanism for selecting and removing guardian token holders.
+# This code assumes that the classes and functions from the foundation code already exist.
+
+class VotingMechanism:
+    def __init__(self):
+        self.guardian_candidates = {}  # Candidate: Votes
+        self.guardians = []  # List of current guardians
+        self.proposals = []  # List of proposals for adding new utility tokens
+
+    def vote_for_guardian(self, candidate, unity_token_holder):
+        """
+        Unity token holders can vote for a guardian candidate.
+        """
+        if candidate not in self.guardian_candidates:
+            self.guardian_candidates[candidate] = 0
+        self.guardian_candidates[candidate] += 1
+
+    def finalize_guardian_vote(self):
+        """
+        Finalizes the voting process for guardians. 
+        Requires 75% majority vote from unity token holders to be selected.
+        """
+        total_votes = sum(self.guardian_candidates.values())
+        for candidate, votes in self.guardian_candidates.items():
+            if votes / total_votes >= 0.75:
+                self.guardians.append(candidate)
+        self.guardian_candidates.clear()
+
+    def propose_new_utility(self, proposal, unity_token_holder):
+        """
+        Unity token holders can propose new utility tokens.
+        """
+        self.proposals.append(proposal)
+
+    def finalize_utility_vote(self):
+        """
+        Finalizes the voting process for new utility tokens.
+        Requires majority vote from current guardian token holders to be added.
+        """
+        # Assume guardian_votes is a dictionary that contains votes from guardian token holders
+        guardian_votes = {}  # Proposal: Votes
+        for proposal in self.proposals:
+            guardian_votes[proposal] = 0  # Initialize votes
+
+        # Simulate votes from guardian token holders
+        for guardian in self.guardians:
+            for proposal in self.proposals:
+                guardian_votes[proposal] += 1  # Each guardian casts one vote for each proposal
+
+        # Add proposals that received a majority vote from guardians
+        for proposal, votes in guardian_votes.items():
+            if votes / len(self.guardians) > 0.5:
+                # Add the new utility token to the network
+                # This can be a function call or other logic
+                pass
+
+        self.proposals.clear()
+
+# Example usage:
+voting = VotingMechanism()
+voting.vote_for_guardian('Alice', 'UnityTokenHolder1')
+voting.vote_for_guardian('Bob', 'UnityTokenHolder2')
+voting.finalize_guardian_vote()
+voting.propose_new_utility('NewUtilityToken1', 'UnityTokenHolder1')
+voting.finalize_utility_vote()
