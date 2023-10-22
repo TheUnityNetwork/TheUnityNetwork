@@ -1,0 +1,72 @@
+# The Unity Network: Elements Coded So Far
+
+## Foundation
+
+### EthicalMetrics Class
+- Handles ethical metrics like environmental responsibility, social equality, economic fairness, and transparency.
+
+### Calculate Ethical Score Function
+- Calculates the ethical score based on transaction details.
+
+### Validate Ethics Function
+- Validates whether a transaction meets the ethical criteria.
+
+### Block Class
+- Represents a block in the blockchain that holds transactions.
+
+### Validate Block Function
+- Validates all transactions in a block based on ethical criteria.
+
+### Node Class
+- Represents a node in the blockchain network.
+
+### Oracle Method
+- Placeholder for an oracle that would pull real-time data for ethical metrics.
+
+### Compliance Check Method
+- Placeholder for ensuring transactions meet legal and compliance requirements.
+
+### Receive Block Method
+- Adds a new block to the blockchain if it passes validation.
+
+### API Integration Method
+- Placeholder for API integrations for future technological synergies.
+
+## Utility Tokens
+
+### Unity Token
+- One per person, acts as an identity key.
+
+### ALC (Alternative Learning Credit) Token
+- A utility token designed to democratize education.
+
+### Renewable Resource Credit Token
+- A utility token aimed at encouraging sustainable practices.
+
+## Voting Mechanism
+
+### Guardian Token Voting
+- Unity Token holders vote to elect Guardians.
+- Guardians require a 75% majority vote from Unity Token holders to be elected.
+- Guardians can also be removed by an 80% consensus of Unity Token holders.
+
+### Utility Token Addition
+- New utility tokens can be added to the network following a vote by Unity Token holders and a majority vote by Guardian Token holders.
+
+## Security
+
+### Sharding
+- Placeholder for future sharding implementation.
+
+### Cryptographic Security
+- Placeholder for future cryptographic implementations.
+
+## Governance
+
+### Governance Contract
+- Placeholder for a governance contract that allows for updates and changes to the blockchain rules.
+
+## Reward System
+
+### Civic Points
+- Reward system based on ethical actions, stored in the Unity Token.
