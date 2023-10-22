@@ -1,35 +1,39 @@
-# ethical_metrics_enhancements.py
+# voting_mechanism.py
 
-class EthicalMetrics:
-    def __init__(self, environmental_responsibility, social_equality, economic_fairness, transparency):
-        self._validate_metric(environmental_responsibility)
-        self._validate_metric(social_equality)
-        self._validate_metric(economic_fairness)
-        self._validate_metric(transparency)
-        
-        self._environmental_responsibility = environmental_responsibility
-        self._social_equality = social_equality
-        self._economic_fairness = economic_fairness
-        self._transparency = transparency
+class VotingSystem:
+    def __init__(self):
+        self.guardian_candidates = {}  # Candidate ID to votes
+        self.utility_proposals = {}  # Proposal ID to votes
+        self.current_guardians = []  # List of current guardian IDs
+        self.unity_token_holders = set()  # Set of Unity token holders
+    
+    def add_candidate(self, candidate_id):
+        self.guardian_candidates[candidate_id] = 0
 
-    def _validate_metric(self, metric_value):
-        if not isinstance(metric_value, (int, float)):
-            raise ValueError("Metric value must be a number")
-        if metric_value < 0 or metric_value > 100:
-            raise ValueError("Metric value must be between 0 and 100")
+    def add_unity_token_holder(self, holder_id):
+        self.unity_token_holders.add(holder_id)
 
-    @property
-    def environmental_responsibility(self):
-        return self._environmental_responsibility
+    def vote_for_guardian(self, holder_id, candidate_id):
+        if holder_id not in self.unity_token_holders:
+            return "Invalid Unity token holder"
+        if candidate_id not in self.guardian_candidates:
+            return "Invalid candidate"
+        self.guardian_candidates[candidate_id] += 1
+        total_votes = len(self.unity_token_holders)
+        if self.guardian_candidates[candidate_id] >= 0.75 * total_votes:
+            self.current_guardians.append(candidate_id)
+            del self.guardian_candidates[candidate_id]
 
-    @property
-    def social_equality(self):
-        return self._social_equality
+    def propose_utility(self, proposal_id):
+        self.utility_proposals[proposal_id] = 0
 
-    @property
-    def economic_fairness(self):
-        return self._economic_fairness
-
-    @property
-    def transparency(self):
-        return self._transparency
+    def vote_for_utility(self, holder_id, proposal_id):
+        if holder_id not in self.unity_token_holders:
+            return "Invalid Unity token holder"
+        if proposal_id not in self.utility_proposals:
+            return "Invalid proposal"
+        self.utility_proposals[proposal_id] += 1
+        total_votes = len(self.unity_token_holders)
+        if self.utility_proposals[proposal_id] >= 0.75 * total_votes:
+            # Add code to integrate the new utility token
+            del self.utility_proposals[proposal_id]
