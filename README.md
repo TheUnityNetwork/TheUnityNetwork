@@ -5,6 +5,8 @@
 
 - 🔭 I’m currently working on [The Unity Network](https://github.com/TheUnityNetwork?tab=repositories)
 
+-You can find my fictional account of the conceptualization implementation and adoption of The Unity Network in a world much like ours, here: (https://a.co/d/2ZiQPub)
+
 - 🌱 I’m currently learning **Github, Python, and html**
 
 - 👯 I’m looking to collaborate on [The Unity Network](https://github.com/TheUnityNetwork?tab=repositories)
