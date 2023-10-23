@@ -9,8 +9,6 @@
 
 - 👯 I’m looking to collaborate on [The Unity Network](https://github.com/TheUnityNetwork?tab=repositories)
 
-- 📝 I regularly write articles on [Freethinkers.info/blogs](Freethinkers.info/blogs)
-
 - 💬 Ask me about **The vision, the goal, the dream**
 
 - 📫 How to reach me **Jason@freethinkers.info**
