@@ -13,7 +13,6 @@
 
 - 📫 How to reach me **Jason@freethinkers.info**
 
-- ⚡ Fun fact **I have ADHD combined type. Neurodivergent and proud**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
